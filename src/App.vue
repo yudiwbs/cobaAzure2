@@ -2,6 +2,7 @@
 
 <template>
   <h1>Halo dunia</h1>
+  <h2> Nama saya yudi</h2>
   <p>
     Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
     documentation
