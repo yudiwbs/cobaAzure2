@@ -1,12 +1,29 @@
-<script setup></script>
+
+<script setup>
+import { ref } from 'vue'
+
+const message = ref('Tap button ...')
+
+async function callApi() {
+  try {
+    const response = await fetch('/api/Hello?name=Vue%20Developer')
+    const data = await response.text()
+    message.value = data
+  } catch (error) {
+    message.value = 'Error: ' + error.message
+  }
+}
+
+</script>
 
 <template>
   <h1>Halo dunia</h1>
   <h2> Nama saya yudi</h2>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+
+  <h1>{{ message }}</h1>
+  <button @click="callApi">Call API</button>
+
+  
 </template>
 
 <style scoped></style>
